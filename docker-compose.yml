@@ -27,4 +27,6 @@ services:
             - ASPNETCORE_URLS=http://0.0.0.0:80
 volumes:
     data:
-  
+networks:
+  website-network:
+    external: true
