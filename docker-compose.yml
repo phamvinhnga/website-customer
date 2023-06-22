@@ -5,6 +5,8 @@ services:
         image: ngapham0705/website-customer:latest
         container_name: website-customer
         restart: always
+        networks:
+            - website-network
         volumes:
             - data:/var/lib/website-customer
             - ./upload:/upload
