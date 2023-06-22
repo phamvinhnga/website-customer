@@ -29,7 +29,7 @@ jobs:
             context: .
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:latest
-            file: ./src/Website.Api/Dockerfile
+            file: ./src/Website/Dockerfile
 
         - name: Connect to VPS and run docker compose
           uses: appleboy/ssh-action@v0.1.10
@@ -39,27 +39,27 @@ jobs:
             password: ${{ secrets.HOST_PASSWORD }}
             script: |
 
-              if [ ! -d ~/website-api ]; then
-                mkdir ~/website-api
+              if [ ! -d ~/website-customer ]; then
+                mkdir ~/website-customer
               fi
 
-              if [[ -f website-api/.env ]]; then
-                sed -i 's/^MYSQL_SERVER=.*/MYSQL_SERVER=${{ secrets.MYSQL_SERVER }}/' ~/website-api/.env
-                sed -i 's/^MYSQL_ROOT_USER=.*/MYSQL_ROOT_USER=${{ secrets.MYSQL_ROOT_USER }}/' ~/website-api/.env
-                sed -i 's/^MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}/' ~/website-api/.env
-                sed -i 's/^MYSQL_USER=.*/MYSQL_USER=${{ secrets.MYSQL_USER }}/' ~/website-api/.env
-                sed -i 's/^MYSQL_PASSWORD=.*/MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}/' ~/website-api/.env
-                sed -i 's/^MYSQL_DATABASE=.*/MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}/' ~/website-api/.env
+              if [[ -f website-customer/.env ]]; then
+                sed -i 's/^MYSQL_SERVER=.*/MYSQL_SERVER=${{ secrets.MYSQL_SERVER }}/' ~/website-customer/.env
+                sed -i 's/^MYSQL_ROOT_USER=.*/MYSQL_ROOT_USER=${{ secrets.MYSQL_ROOT_USER }}/' ~/website-customer/.env
+                sed -i 's/^MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}/' ~/website-customer/.env
+                sed -i 's/^MYSQL_USER=.*/MYSQL_USER=${{ secrets.MYSQL_USER }}/' ~/website-customer/.env
+                sed -i 's/^MYSQL_PASSWORD=.*/MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}/' ~/website-customer/.env
+                sed -i 's/^MYSQL_DATABASE=.*/MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}/' ~/website-customer/.env
               else
-                echo "MYSQL_SERVER=${{ secrets.MYSQL_SERVER }}" > website-api/.env
-                echo "MYSQL_ROOT_USER=${{ secrets.MYSQL_ROOT_USER }}" >> website-api/.env
-                echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" >> website-api/.env
-                echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> website-api/.env
-                echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> website-api/.env
-                echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> website-api/.env
+                echo "MYSQL_SERVER=${{ secrets.MYSQL_SERVER }}" > website-customer/.env
+                echo "MYSQL_ROOT_USER=${{ secrets.MYSQL_ROOT_USER }}" >> website-customer/.env
+                echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" >> website-customer/.env
+                echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> website-customer/.env
+                echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> website-customer/.env
+                echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> website-customer/.env
               fi
             
-              cd ~/website-api/
+              cd ~/website-customer/
 
               docker compose up -d
                       
