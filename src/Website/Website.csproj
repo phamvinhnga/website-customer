@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+	    <TargetFramework>net6.0</TargetFramework>
+	    <ImplicitUsings>enable</ImplicitUsings>
+	    <UserSecretsId>d961e245-9dc4-4173-b0f6-c025d7067b2a</UserSecretsId>
+	    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	    <DockerfileContext>..\..</DockerfileContext>
+    </PropertyGroup>
+	
+  <ItemGroup>
+	<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+	<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+	<PackageReference Include="ServiceStack" Version="6.8.0" />
+	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Website.Biz\Website.Biz.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="Views\ClassRoom\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta property="og:locale" content="vi_VN" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="@ViewData["Permalink"]" />
+
+    <title>@ViewData["MetaTitle"]</title>
+    <meta name="description" content="@ViewData["MetaDescription"]" />
+
+    <meta property="og:site_name" content="@ViewData["MetaTitle"]" />
+    <meta property="og:title" content="@ViewData["MetaTitle"]" />
+    <meta property="og:description" content="@ViewData["MetaDescription"]" />
+    <meta property="og:image" content="https://static.chotot.com/storage/marketplace/ct_orange_c2c_200.jpg" />
+    <meta property="og:url" content="@ViewData["Permalink"]" />
+
+    <!-- unknown  -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://adservice.google.com" />
+    <link rel="preconnect" href="https://adservice.google.com.vn" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://tpc.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
+    <link rel="dns-prefetch" href="https://use.fontawesome.com/" />
+    <link rel="dns-prefetch" data-href="https://fonts.googleapis.com/" />
+    <link rel="dns-prefetch" href="https://anymind360.com/" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net/" />
+    <link rel="dns-prefetch" href="https://tpc.googlesyndication.com/" />
+
+    <!-- site google  -->
+    <meta name="google-site-verification" content="O-zbU2YhR9rmTfokgfkj613H2rCcUMXXhfiXLBxKpg8" />
+    <meta name="google" content="nositelinkssearchbox" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <meta name="revisit-after" content="1 days" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+   </head>
+<body>
+@await Html.PartialAsync("_Navbar")
+@RenderBody()
+@await Html.PartialAsync("_Footer")
+<a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JNZZ1QXXLM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JNZZ1QXXLM');
+    </script>
+</html>

@@ -1,0 +1,14 @@
+# Net
+Properties/
+.config/
+.vs
+.vscode
+obj/
+bin/
+
+App_Data/
+
+# System files
+.DS_Store
+.idea/.idea.Website/.idea/vcs.xml
+.idea/.idea.Website/.idea/deployment.xml
