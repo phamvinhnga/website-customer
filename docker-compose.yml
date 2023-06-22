@@ -15,7 +15,7 @@ services:
             - ConnectionString__Database=${MYSQL_DATABASE}
             - ConnectionString__UserId=${MYSQL_ROOT_USER}
             - ConnectionString__Password=${MYSQL_ROOT_PASSWORD}
-            - ConnectionString__Port= 3308
+            - ConnectionString__Port= 3306
             - ConnectionString__Version=8.0.33
             - JWT__SecurityKey=ABC_C421AAEE0D114E9C
             - JWT__ValidIssuer=ABC
