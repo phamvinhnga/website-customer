@@ -4,9 +4,9 @@ services:
     website-customer:
         image: ngapham0705/website-customer:latest
         container_name: website-customer
-        restart: always
         networks:
             - website-network
+        restart: always
         volumes:
             - data:/var/lib/website-customer
             - ./upload:/upload
@@ -29,6 +29,8 @@ services:
             - ASPNETCORE_URLS=http://0.0.0.0:80
 volumes:
     data:
+
 networks:
   website-network:
     external: true
+    name: website-network
