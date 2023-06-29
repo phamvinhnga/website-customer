@@ -8,7 +8,7 @@ services:
             - website-network
         restart: always
         volumes:
-            - data:/var/lib/website-customer
+            - website-custoner-volume:/var/lib/website-customer
             - ./upload:/upload
         ports:
             - 5001:5001
@@ -28,7 +28,7 @@ services:
             - Upload__Url=http://localhost:5000/api/file/{0}/{1}
             - ASPNETCORE_URLS=http://0.0.0.0:5001
 volumes:
-    data:
+    website-custoner-volume:
 
 networks:
   website-network:
