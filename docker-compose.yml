@@ -11,7 +11,7 @@ services:
             - data:/var/lib/website-customer
             - ./upload:/upload
         ports:
-            - 80:80
+            - 5001:5001
         environment:
             - ConnectionString__Server=${MYSQL_SERVER}
             - ConnectionString__Database=${MYSQL_DATABASE}
@@ -26,7 +26,7 @@ services:
             - JWT__ExpiresRefreshToken=2
             - Upload__Folder=/upload
             - Upload__Url=http://localhost:5000/api/file/{0}/{1}
-            - ASPNETCORE_URLS=http://0.0.0.0:80
+            - ASPNETCORE_URLS=http://0.0.0.0:5001
 volumes:
     data:
 
