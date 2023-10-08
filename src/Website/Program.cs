@@ -11,18 +11,9 @@ builder.Services.AddOptions<DbContextConnectionSettingOptions>()
     .Bind(builder.Configuration
         .GetSection(DbContextConnectionSettingOptions.Position))
     .ValidateDataAnnotations();
-builder.Services.AddOptions<FileUploadSettingOptions>()
-    .Bind(builder.Configuration
-        .GetSection(FileUploadSettingOptions.Position))
-    .ValidateDataAnnotations();
-builder.Services.AddOptions<JWTSettingOptions>()
-    .Bind(builder.Configuration
-        .GetSection(JWTSettingOptions.Position))
-    .ValidateDataAnnotations();
 builder.Services.AddControllersWithViews();
 builder.Services.UseSqlServiceBuilder(configuration);
 builder.Services.UseInjectionServiceBuilder(configuration);
-builder.Services.UseAuthServiceBuilder(configuration);
 var config = new MapperConfiguration(cfg =>
 {
     cfg.AddProfile(new MappingProfile());
